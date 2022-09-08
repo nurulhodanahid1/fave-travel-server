@@ -44,7 +44,6 @@ async function run() {
       // booking post data 
       app.post('/booking', async(req, res) => {
         const service = req.body;
-        console.log(service)
         const result = await bookingCollection.insertOne(service)
         res.json(result)
       })
@@ -61,7 +60,6 @@ async function run() {
         const id = req.params.id;
         const query = {_id: ObjectId(id)}
         const result = await bookingCollection.deleteOne(query);
-        // console.log('deleted id', result)
         res.json(result);
       })
 
@@ -69,7 +67,6 @@ async function run() {
       // update api 
       app.put('/booking/:id', async(req, res)=>{
         const id = req.params.id;
-        console.log(id)
         const status=req.body;
         const filter = { _id: ObjectId(id) };
         const options = { upsert: true };
