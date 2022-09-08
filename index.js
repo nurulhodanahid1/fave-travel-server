@@ -96,7 +96,7 @@ app.use(express.json());
 
 
 app.get('/', (req, res) => {
-  res.send('Express Running!')
+  res.send('fave travel server running!')
 })
 
 app.listen(port, () => {
